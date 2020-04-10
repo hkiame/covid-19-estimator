@@ -1,5 +1,5 @@
 <?php
-
+/*
 $data = [
   "region" => [
     "name" => "Africa",
@@ -13,6 +13,7 @@ $data = [
   "population" => 92931687,
   "totalHospitalBeds" => 678874
 ];
+*/
 
 
 function covid19ImpactEstimator($data)
