@@ -38,7 +38,7 @@ function covid19ImpactEstimator($data)
   $output['severeImpact']['currentlyInfected'] = $severeCurrentlyInfected;
   $output['severeImpact']['infectionsByRequestedTime'] = $severeInfectByRequestedTime;
   
-  return json_encode($output);
+  return $output;
 }
 
 function calcInfectByRequestedTime($num, $days){
