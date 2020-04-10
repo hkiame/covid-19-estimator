@@ -13,8 +13,8 @@ $data = [
   "population" => 92931687,
   "totalHospitalBeds" => 678874
 ];
-
 */
+
 
 
 
@@ -85,20 +85,21 @@ function getdays($input, $value){
 }
 
 function severeCasesByRequestedTime($cases){
-  return number_format((15/100) * $cases, 0, '.', '');
+  return floor((15/100) * $cases);
 }
 
 function availableBeds($cases, $beds){
-  $requiredBeds = 0.35 * $beds;
-  return number_format($requiredBeds - $cases, 0, '.', '');
+  $requiredBeds = floor(0.35 * $beds);
+  var_dump($requiredBeds);
+  return ($requiredBeds - $cases);
 }
 
 function icuCases($cases){
-  return number_format(0.05 * $cases, 0, '.', '');
+  return floor(0.05 * $cases);
 }
 
 function ventilatorCases($cases){
-  return number_format(0.02 * $cases, 0, '.', '');
+  return floor(0.02 * $cases);
 }
 
 function incomeLost($infected, $avgDailyIncomePop, $avgDailyIncome, $days){
