@@ -1,5 +1,5 @@
 <?php
-/*
+
 $data = [
   "region" => [
     "name" => "Africa",
@@ -13,7 +13,7 @@ $data = [
   "population" => 92931687,
   "totalHospitalBeds" => 678874
 ];
-*/
+
 
 
 
@@ -89,8 +89,7 @@ function severeCasesByRequestedTime($cases){
 }
 
 function availableBeds($cases, $beds){
-  $requiredBeds = floor(0.35 * $beds);
-  var_dump($requiredBeds);
+  $requiredBeds = round(0.35 * $beds);
   return ($requiredBeds - $cases);
 }
 
@@ -106,3 +105,7 @@ function incomeLost($infected, $avgDailyIncomePop, $avgDailyIncome, $days){
   $result = $infected * $avgDailyIncomePop * $avgDailyIncome * $days;
   return number_format($result, 2, '.', '');
 }
+
+echo "<pre>";
+print_r(covid19ImpactEstimator($data));
+echo "</pre>";
