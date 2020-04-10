@@ -1,18 +1,18 @@
 <?php
 
-$data = [
-  "region" => [
-    "name" => "Africa",
-    "avgAge" => 19.7,
-    "avgDailyIncomeInUSD" => 4,
-    "avgDailyIncomePopulation" => 0.73
-  ],
-  "periodType" => "days",
-  "timeToElapse" => 38,
-  "reportedCases" => 2747,
-  "population" => 92931687,
-  "totalHospitalBeds" => 678874
-];
+// $data = [
+//   "region" => [
+//     "name" => "Africa",
+//     "avgAge" => 19.7,
+//     "avgDailyIncomeInUSD" => 4,
+//     "avgDailyIncomePopulation" => 0.73
+//   ],
+//   "periodType" => "days",
+//   "timeToElapse" => 38,
+//   "reportedCases" => 2747,
+//   "population" => 92931687,
+//   "totalHospitalBeds" => 678874
+// ];
 
 
 
@@ -107,6 +107,6 @@ function incomeLost($infected, $avgDailyIncomePop, $avgDailyIncome, $days){
   return number_format($result, 2, '.', '');
 }
 
-echo "<pre>";
-print_r(covid19ImpactEstimator($data));
-echo "</pre>";
+// echo "<pre>";
+// print_r(covid19ImpactEstimator($data));
+// echo "</pre>";
