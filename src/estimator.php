@@ -18,18 +18,17 @@ $data = '{
 
 function covid19ImpactEstimator($data)
 {
-  $myData = json_decode($data, true);
   $output = array(
-    'data' => $myData,
+    'data' => $data,
     'impact' => [],
     'severeImpact' => []
   );
 
-  $reportedCases = $myData['reportedCases'];
+  $reportedCases = $data['reportedCases'];
   $impactCurrentlyInfected = $reportedCases * 10;
   $severeCurrentlyInfected = $reportedCases * 50;
-  $periodType = $myData['periodType'];
-  $timeToElapse = $myData['timeToElapse'];
+  $periodType = $data['periodType'];
+  $timeToElapse = $data['timeToElapse'];
   $impactInfectByRequestedTime = calcInfectByRequestedTime($impactCurrentlyInfected, getdays($periodType, $timeToElapse));
   $severeInfectByRequestedTime = calcInfectByRequestedTime($severeCurrentlyInfected, getdays($periodType, $timeToElapse));
 
