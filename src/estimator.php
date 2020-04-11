@@ -28,13 +28,22 @@ $data2 = [
   'population' => 3963979,
   'totalHospitalBeds' => 65704
 ];
+
+$data3 =[
+  'region' => array(
+    'name' => "Africa",
+    'avgAge' => 19.7,
+    'avgDailyIncomeInUSD' => 3,
+    'avgDailyIncomePopulation' => 0.74,
+  ),
+  'periodType' => "days",
+  'timeToElapse' => 47,
+  'reportedCases' => 2090,
+  'population' => 2610231,
+  'totalHospitalBeds' => 93199
+];
+
 */
-
-
-
-
-
-
 
 
 function covid19ImpactEstimator($data)
@@ -87,7 +96,7 @@ function covid19ImpactEstimator($data)
 }
 
 function calcInfectByRequestedTime($num, $days){
-  return $num * pow(2, floor($days/3));
+  return $num * pow(2, trunc($days/3));
 }
 
 function getdays($input, $value){
@@ -106,8 +115,8 @@ function severeCasesByRequestedTime($cases){
 }
 
 function availableBeds($cases, $beds){
-  $requiredBeds = trunc(0.35 * $beds);
-  return ($requiredBeds - $cases);
+  $r = 0.35 * $beds;
+  return trunc($r - $cases);
 }
 
 function icuCases($cases){
@@ -128,8 +137,7 @@ function trunc($value){
   return (int)$r;
 }
 
-/*
-echo "<pre>";
-print_r(covid19ImpactEstimator($data2));
-echo "</pre>";
-*/
+
+// echo "<pre>";
+// print_r(covid19ImpactEstimator($data3));
+// echo "</pre>";
