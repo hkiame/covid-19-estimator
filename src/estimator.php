@@ -129,7 +129,7 @@ function ventilatorCases($cases){
 
 function incomeLost($infected, $avgDailyIncomePop, $avgDailyIncome, $days){
   $result = $infected * $avgDailyIncomePop * $avgDailyIncome / $days;
-  return number_format($result, 2, '.', '');
+  return trunc($result);
 }
 
 function trunc($value){
