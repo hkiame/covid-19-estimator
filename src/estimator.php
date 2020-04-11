@@ -28,7 +28,7 @@ function covid19ImpactEstimator($data)
     'impact' => [],
     'severeImpact' => []
   );
-
+  var_dump($data);
   $reportedCases = $data['reportedCases'];
   $impactCurrentlyInfected = $reportedCases * 10;
   $severeCurrentlyInfected = $reportedCases * 50;
