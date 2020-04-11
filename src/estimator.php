@@ -1,18 +1,34 @@
 <?php
+/*
+$data = [
+  "region" => [
+    "name" => "Africa",
+    "avgAge" => 19.7,
+    "avgDailyIncomeInUSD" => 4,
+    "avgDailyIncomePopulation" => 0.73
+  ],
+  "periodType" => "days",
+  "timeToElapse" => 38,
+  "reportedCases" => 2747,
+  "population" => 92931687,
+  "totalHospitalBeds" => 678874
+];
 
-// $data = [
-//   "region" => [
-//     "name" => "Africa",
-//     "avgAge" => 19.7,
-//     "avgDailyIncomeInUSD" => 4,
-//     "avgDailyIncomePopulation" => 0.73
-//   ],
-//   "periodType" => "days",
-//   "timeToElapse" => 38,
-//   "reportedCases" => 2747,
-//   "population" => 92931687,
-//   "totalHospitalBeds" => 678874
-// ];
+
+$data2 = [
+  'region' => array(
+    'name' => "Africa",
+    'avgAge' => 19.7,
+    'avgDailyIncomeInUSD' => 2,
+    'avgDailyIncomePopulation' => 0.66
+  ),
+  'periodType' => "weeks",
+  'timeToElapse' => 2,
+  'reportedCases' => 1031,
+  'population' => 3963979,
+  'totalHospitalBeds' => 65704
+];
+*/
 
 
 
@@ -28,7 +44,7 @@ function covid19ImpactEstimator($data)
     'impact' => [],
     'severeImpact' => []
   );
-  var_dump($data);
+  //var_dump($data);
   $reportedCases = $data['reportedCases'];
   $impactCurrentlyInfected = $reportedCases * 10;
   $severeCurrentlyInfected = $reportedCases * 50;
@@ -86,27 +102,34 @@ function getdays($input, $value){
 }
 
 function severeCasesByRequestedTime($cases){
-  return floor((15/100) * $cases);
+  return trunc((15/100) * $cases);
 }
 
 function availableBeds($cases, $beds){
-  $requiredBeds = round(0.35 * $beds);
+  $requiredBeds = trunc(0.35 * $beds);
   return ($requiredBeds - $cases);
 }
 
 function icuCases($cases){
-  return floor(0.05 * $cases);
+  return trunc(0.05 * $cases);
 }
 
 function ventilatorCases($cases){
-  return floor(0.02 * $cases);
+  return trunc(0.02 * $cases);
 }
 
 function incomeLost($infected, $avgDailyIncomePop, $avgDailyIncome, $days){
-  $result = $infected * $avgDailyIncomePop * $avgDailyIncome * $days;
+  $result = $infected * $avgDailyIncomePop * $avgDailyIncome / $days;
   return number_format($result, 2, '.', '');
 }
 
-// echo "<pre>";
-// print_r(covid19ImpactEstimator($data));
-// echo "</pre>";
+function trunc($value){
+  $r = preg_replace("/\.\d+/", "", $value);
+  return (int)$r;
+}
+
+/*
+echo "<pre>";
+print_r(covid19ImpactEstimator($data2));
+echo "</pre>";
+*/
