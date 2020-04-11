@@ -1,5 +1,5 @@
 <?php
-
+/*
 $data = [
   "region" => [
     "name" => "Africa",
@@ -14,6 +14,8 @@ $data = [
   "totalHospitalBeds" => 678874
 ];
 
+*/
+
 
 
 
@@ -23,7 +25,6 @@ $data = [
 
 function covid19ImpactEstimator($data)
 {
-  var_dump($data);
   $output = array(
     'data' => $data,
     'impact' => [],
@@ -108,6 +109,6 @@ function incomeLost($infected, $avgDailyIncomePop, $avgDailyIncome, $days){
   return number_format($result, 2, '.', '');
 }
 
-echo "<pre>";
-print_r(covid19ImpactEstimator($data));
-echo "</pre>";
+// echo "<pre>";
+// print_r(covid19ImpactEstimator($data));
+// echo "</pre>";
