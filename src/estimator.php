@@ -28,21 +28,6 @@ $data2 = [
   'population' => 3963979,
   'totalHospitalBeds' => 65704
 ];
-
-$data3 =[
-  'region' => array(
-    'name' => "Africa",
-    'avgAge' => 19.7,
-    'avgDailyIncomeInUSD' => 3,
-    'avgDailyIncomePopulation' => 0.74,
-  ),
-  'periodType' => "days",
-  'timeToElapse' => 47,
-  'reportedCases' => 2090,
-  'population' => 2610231,
-  'totalHospitalBeds' => 93199
-];
-
 */
 
 
@@ -139,5 +124,5 @@ function trunc($value){
 
 
 // echo "<pre>";
-// print_r(covid19ImpactEstimator($data3));
+// print_r(covid19ImpactEstimator($data));
 // echo "</pre>";
