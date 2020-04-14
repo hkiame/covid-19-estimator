@@ -90,7 +90,6 @@ function trunc($value){
   $r = preg_replace("/\.\d+/", "", $value);
   return (int)$r;
 }
-
 // echo "<pre>";
 // print_r(covid19ImpactEstimator($data));
 // echo "</pre>";
