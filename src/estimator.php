@@ -1,35 +1,4 @@
 <?php
-/*
-$data = [
-  "region" => [
-    "name" => "Africa",
-    "avgAge" => 19.7,
-    "avgDailyIncomeInUSD" => 4,
-    "avgDailyIncomePopulation" => 0.73
-  ],
-  "periodType" => "days",
-  "timeToElapse" => 38,
-  "reportedCases" => 2747,
-  "population" => 92931687,
-  "totalHospitalBeds" => 678874
-];
-
-
-$data2 = [
-  'region' => array(
-    'name' => "Africa",
-    'avgAge' => 19.7,
-    'avgDailyIncomeInUSD' => 2,
-    'avgDailyIncomePopulation' => 0.66
-  ),
-  'periodType' => "weeks",
-  'timeToElapse' => 2,
-  'reportedCases' => 1031,
-  'population' => 3963979,
-  'totalHospitalBeds' => 65704
-];
-*/
-
 
 function covid19ImpactEstimator($data)
 {
