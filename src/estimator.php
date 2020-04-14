@@ -91,7 +91,6 @@ function trunc($value){
   return (int)$r;
 }
 
-
 // echo "<pre>";
 // print_r(covid19ImpactEstimator($data));
 // echo "</pre>";
